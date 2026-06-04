@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aktiva — Parrucchiere Antonio Pepe | Matera</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --stone:#8B6914;
+  --stone2:#A07820;
+  --terracotta:#C4542A;
+  --sand:#F5EDD8;
+  --warm:#FDF8F0;
+  --dark:#1A1008;
+  --brown:#3D2010;
+  --text:#2A1A08;
+  --muted:#8A7060;
+  --serif:'Cormorant Garamond',serif;
+  --sans:'Jost',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--warm);color:var(--text);font-family:var(--sans);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,248,240,.97);backdrop-filter:blur(12px);padding:14px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(139,105,20,.2)}
+.nav-logo{font-family:var(--serif);font-size:20px;color:var(--stone);text-decoration:none;font-style:italic;letter-spacing:1px}
+.nav-logo small{display:block;font-size:8px;letter-spacing:3px;color:var(--muted);font-family:var(--sans);font-style:normal;font-weight:500;text-transform:uppercase;margin-top:1px}
+.nav-book{background:var(--stone);color:#fff;padding:8px 18px;font-size:11px;font-weight:600;text-decoration:none;letter-spacing:2px;text-transform:uppercase;border-radius:30px;transition:all .3s}
+.nav-book:hover{background:var(--stone2)}
+
+/* HERO */
+.hero{background:var(--dark);min-height:100vh;padding:100px 20px 60px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80') center/cover no-repeat;opacity:.2}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,16,8,.95) 0%,rgba(26,16,8,.5) 60%,rgba(26,16,8,.2) 100%)}
+.hero-content{position:relative;z-index:2;text-align:center}
+.hero-pre{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--stone2);margin-bottom:16px;font-weight:600}
+.hero-title{font-family:var(--serif);font-size:64px;line-height:.9;color:#fff;margin-bottom:12px;font-style:italic;font-weight:600}
+.hero-title span{color:var(--stone2);display:block;font-size:44px}
+.hero-divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:16px 0}
+.hero-divider::before,.hero-divider::after{content:'';flex:1;max-width:48px;height:1px;background:rgba(160,120,32,.4)}
+.hero-divider span{color:var(--stone2);font-size:14px}
+.hero-sub{font-size:14px;color:rgba(255,255,255,.55);line-height:1.8;max-width:360px;margin:0 auto 28px;font-weight:300;font-style:italic}
+.hero-cta{display:flex;flex-direction:column;gap:10px;max-width:280px;margin:0 auto}
+.btn-main{background:var(--stone);color:#fff;padding:14px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:block;text-align:center;border-radius:30px;transition:all .3s}
+.btn-main:hover{background:var(--stone2)}
+.btn-ghost{border:1px solid rgba(255,255,255,.2);color:#fff;padding:12px;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:block;text-align:center;border-radius:30px}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:1fr 1fr;background:var(--stone);margin-top:0}
+.stat{padding:18px 8px;text-align:center;border-right:1px solid rgba(255,255,255,.15);border-bottom:1px solid rgba(255,255,255,.15)}
+.stat:nth-child(even){border-right:none}
+.stat-num{font-family:var(--serif);font-size:30px;color:#fff;display:block;font-weight:700;line-height:1;font-style:italic}
+.stat-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:4px;display:block;font-weight:500}
+
+/* INTRO */
+.intro{padding:56px 20px;background:var(--sand);text-align:center}
+.sec-tag{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--stone);margin-bottom:10px;font-weight:600}
+.sec-title{font-family:var(--serif);font-size:38px;color:var(--brown);font-style:italic;line-height:1;margin-bottom:16px}
+.sec-text{font-size:14px;color:var(--muted);line-height:1.9;max-width:440px;margin:0 auto;font-weight:300}
+
+/* SERVIZI */
+.servizi{padding:56px 20px;background:var(--warm)}
+.svc-grid{display:grid;grid-template-columns:1fr;gap:10px;margin-top:28px}
+.svc-card{background:var(--sand);padding:22px;border-radius:16px;display:flex;align-items:flex-start;gap:14px;transition:transform .3s}
+.svc-card:hover{transform:translateY(-2px)}
+.svc-icon{font-size:28px;flex-shrink:0;margin-top:2px}
+.svc-name{font-family:var(--serif);font-size:20px;color:var(--brown);font-style:italic;margin-bottom:4px}
+.svc-desc{font-size:13px;color:var(--muted);line-height:1.6;font-weight:300}
+
+/* CHI SIAMO */
+.chi-siamo{padding:56px 20px;background:var(--dark)}
+.chi-siamo img{width:100%;height:240px;object-fit:cover;border-radius:16px;margin-bottom:28px;filter:sepia(20%)}
+.cs-tag{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--stone2);margin-bottom:10px;font-weight:600}
+.cs-title{font-family:var(--serif);font-size:34px;color:#fff;font-style:italic;line-height:1.05;margin-bottom:8px}
+.cs-rule{width:28px;height:1px;background:var(--stone);margin:14px 0 18px}
+.chi-siamo p{color:rgba(255,255,255,.5);line-height:1.9;font-size:14px;margin-bottom:14px;font-weight:300}
+.chi-siamo-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.chi-siamo-list li{display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,.6);font-size:14px}
+.chi-siamo-list li::before{content:'✦';color:var(--stone2);flex-shrink:0}
+
+/* RECENSIONI */
+.recensioni{padding:56px 20px;background:var(--sand)}
+.rev-header{text-align:center;margin-bottom:28px}
+.rev-num{font-family:var(--serif);font-size:60px;color:var(--stone);display:block;line-height:1;font-style:italic;font-weight:700}
+.rev-stars{color:var(--stone2);font-size:18px;letter-spacing:3px;margin:6px 0}
+.rev-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:500}
+.rev-grid{display:flex;flex-direction:column;gap:12px}
+.rev-card{background:var(--warm);padding:22px;border-radius:16px;border-left:3px solid var(--stone)}
+.rev-text{font-family:var(--serif);font-size:15px;color:var(--brown);line-height:1.8;font-style:italic;margin-bottom:12px}
+.rev-author{font-size:11px;color:var(--stone);letter-spacing:2px;text-transform:uppercase;font-weight:600}
+
+/* CONTATTI */
+.contatti{padding:56px 20px;background:var(--dark)}
+.ct-tag{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--stone2);margin-bottom:10px;font-weight:600}
+.ct-title{font-family:var(--serif);font-size:34px;color:#fff;font-style:italic;line-height:1.05;margin-bottom:8px}
+.ct-rule{width:28px;height:1px;background:var(--stone);margin:14px 0 18px}
+.ct-text{color:rgba(255,255,255,.45);font-size:14px;line-height:1.8;margin-bottom:24px;font-weight:300}
+.c-item{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.c-icon{width:36px;height:36px;background:rgba(139,105,20,.3);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.c-info strong{color:#fff;display:block;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px}
+.c-info a,.c-info span{color:rgba(255,255,255,.45);font-size:13px;text-decoration:none}
+.c-info a:hover{color:var(--stone2)}
+.orari-box{background:rgba(139,105,20,.1);border:1px solid rgba(139,105,20,.2);border-radius:16px;padding:24px;margin-top:24px}
+.orari-title{font-family:var(--serif);font-size:20px;color:#fff;font-style:italic;margin-bottom:16px}
+.orario-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:13px}
+.orario-giorno{color:rgba(255,255,255,.45)}
+.orario-ora{color:#fff;font-weight:600}
+.orario-chiuso{color:rgba(255,255,255,.2)}
+.wa-box{background:var(--stone);border-radius:16px;padding:24px;margin-top:16px;text-align:center}
+.wa-title{font-family:var(--serif);font-size:20px;color:#fff;font-style:italic;margin-bottom:6px}
+.wa-sub{color:rgba(255,255,255,.7);font-size:13px;margin-bottom:14px;line-height:1.6;font-weight:300}
+.wa-btn{background:#fff;color:var(--stone);padding:12px 28px;border-radius:30px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-block}
+
+/* FOOTER */
+footer{background:var(--dark);padding:24px 20px;border-top:1px solid rgba(139,105,20,.2);text-align:center}
+.footer-logo{font-family:var(--serif);font-size:22px;color:#fff;font-style:italic}
+.footer-logo span{color:var(--stone2)}
+.footer-sub{font-size:9px;color:rgba(255,255,255,.25);margin:4px 0 8px;letter-spacing:3px;text-transform:uppercase}
+.footer-info{color:rgba(255,255,255,.3);font-size:12px;line-height:1.9}
+
+/* DESKTOP */
+@media(min-width:768px){
+  nav{padding:16px 60px}
+  .nav-logo{font-size:24px}
+  .hero{padding:140px 60px 80px;text-align:left}
+  .hero-divider{justify-content:flex-start}
+  .hero-sub{margin-left:0;max-width:440px}
+  .hero-cta{flex-direction:row;max-width:none}
+  .btn-main,.btn-ghost{width:auto;display:inline-block;padding-left:32px;padding-right:32px}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .stat{border-bottom:none}
+  .stat:nth-child(even){border-right:1px solid rgba(255,255,255,.15)}
+  .intro{padding:100px 60px}
+  .servizi{padding:100px 60px}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .chi-siamo{padding:100px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .chi-siamo img{height:520px;margin-bottom:0}
+  .recensioni{padding:100px 60px}
+  .rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;flex-direction:unset}
+  .contatti{padding:100px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px}
+  .orari-box,.wa-box{margin-top:0}
+  footer{padding:32px 60px;display:flex;justify-content:space-between;align-items:center;text-align:left}
+  .footer-sub{margin:3px 0 0}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Aktiva<small>Parrucchiere · Matera</small></a>
+  <a href="tel:+393333691411" class="nav-book">📞 Prenota Ora</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-pre">✦ Parrucchiere · Matera · Dal 1990 ✦</p>
+    <h1 class="hero-title">Aktiva<span>Antonio Pepe</span></h1>
+    <div class="hero-divider"><span>✦</span></div>
+    <p class="hero-sub">"Il professionista della tua bellezza — taglio, colore e acconciature per uomo e donna nel cuore di Matera."</p>
+    <div class="hero-cta">
+      <a href="tel:+393333691411" class="btn-main">📞 +39 333 369 1411</a>
+      <a href="#contatti" class="btn-ghost">Dove Siamo →</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><span class="stat-num">163</span><span class="stat-label">Recensioni Google</span></div>
+  <div class="stat"><span class="stat-num">4.7★</span><span class="stat-label">Valutazione</span></div>
+  <div class="stat"><span class="stat-num">✅</span><span class="stat-label">Autorizzato</span></div>
+  <div class="stat"><span class="stat-num">📍</span><span class="stat-label">Matera</span></div>
+</div>
+
+<section class="intro">
+  <p class="sec-tag">La Nostra Filosofia</p>
+  <h2 class="sec-title">La tua bellezza, la nostra passione</h2>
+  <p class="sec-text">Da anni Antonio Pepe e il suo team si dedicano alla cura dei capelli con passione e professionalità. Ogni cliente merita il meglio — taglio, colore e stile personalizzato per esaltare la tua bellezza naturale.</p>
+</section>
+
+<section class="servizi" id="servizi">
+  <p class="sec-tag">I Nostri Servizi</p>
+  <h2 class="sec-title">Cosa Offriamo</h2>
+  <div class="svc-grid">
+    <div class="svc-card"><span class="svc-icon">✂️</span><div><div class="svc-name">Taglio & Piega</div><p class="svc-desc">Tagli personalizzati per uomo e donna — classici o moderni, sempre perfetti per il tuo stile e la forma del viso.</p></div></div>
+    <div class="svc-card"><span class="svc-icon">🎨</span><div><div class="svc-name">Colorazione</div><p class="svc-desc">Colore, mèches, balayage e decolorazione — risultati naturali e duraturi con prodotti di alta qualità.</p></div></div>
+    <div class="svc-card"><span class="svc-icon">💆</span><div><div class="svc-name">Trattamenti</div><p class="svc-desc">Trattamenti ristrutturanti, cheratina e maschere intensive per capelli sani, forti e luminosi.</p></div></div>
+    <div class="svc-card"><span class="svc-icon">💍</span><div><div class="svc-name">Acconciature Sposa</div><p class="svc-desc">Acconciature da sposa, cerimonie ed eventi speciali — per essere perfetta nel giorno più importante.</p></div></div>
+    <div class="svc-card"><span class="svc-icon">🧔</span><div><div class="svc-name">Servizi Uomo</div><p class="svc-desc">Taglio uomo, barba e rasatura — cura e stile per l'uomo moderno che vuole essere sempre al meglio.</p></div></div>
+    <div class="svc-card"><span class="svc-icon">✨</span><div><div class="svc-name">Permanente</div><p class="svc-desc">Permanente e ondulazioni per capelli con volume e movimento naturale — tecnica professionale e risultati garantiti.</p></div></div>
+  </div>
+</section>
+
+<section class="chi-siamo" id="chi-siamo">
+  <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&q=80" alt="Aktiva Salone Antonio Pepe Matera">
+  <div>
+    <p class="cs-tag">Chi Siamo</p>
+    <h2 class="cs-title">Anni di esperienza al tuo servizio</h2>
+    <div class="cs-rule"></div>
+    <p>Il salone Aktiva di Antonio Pepe è uno dei punti di riferimento per la cura dei capelli a Matera. Con anni di esperienza e una passione autentica per l'arte della acconciatura, Antonio e il suo team accolgono ogni cliente con professionalità e calore.</p>
+    <p>Con 163 recensioni su Google e una valutazione di 4.7 stelle, la qualità del nostro lavoro parla da sola. Vieni a trovarci nel cuore di Matera — ti aspettiamo!</p>
+    <ul class="chi-siamo-list">
+      <li>163 recensioni Google — 4.7 stelle</li>
+      <li>Taglio, colore e trattamenti professionali</li>
+      <li>Servizi per uomo e donna</li>
+      <li>Acconciature per cerimonie e matrimoni</li>
+      <li>Prodotti di alta qualità</li>
+      <li>Situato nel cuore di Matera</li>
+    </ul>
+  </div>
+</section>
+
+<section class="recensioni">
+  <div class="rev-header">
+    <span class="rev-num">4.7</span>
+    <div class="rev-stars">★★★★★</div>
+    <div class="rev-label">163 Recensioni su Google</div>
+  </div>
+  <div class="rev-grid">
+    <div class="rev-card">
+      <p class="rev-text">"Antonio è un professionista eccezionale. Capisce subito quello che vuoi e il risultato è sempre perfetto. Lo consiglio a tutti!"</p>
+      <div class="rev-author">Recensione Google · Matera</div>
+    </div>
+    <div class="rev-card">
+      <p class="rev-text">"Sono cliente da anni e non cambierei mai. Personale gentile, ambiente accogliente e risultati sempre impeccabili. Bravissimi!"</p>
+      <div class="rev-author">Recensione Google · Matera</div>
+    </div>
+    <div class="rev-card">
+      <p class="rev-text">"Finalmente un parrucchiere che sa davvero il suo mestiere! Taglio perfetto e ottimi consigli per la cura dei capelli."</p>
+      <div class="rev-author">Recensione Google · Matera</div>
+    </div>
+    <div class="rev-card">
+      <p class="rev-text">"Professionalità, cortesia e qualità. Antonio e il suo team sono i migliori parrucchieri di Matera. Assolutamente consigliato!"</p>
+      <div class="rev-author">Recensione Google · Matera</div>
+    </div>
+  </div>
+</section>
+
+<section class="contatti" id="contatti">
+  <div>
+    <p class="ct-tag">Contattaci</p>
+    <h2 class="ct-title">Prenota il tuo appuntamento</h2>
+    <div class="ct-rule"></div>
+    <p class="ct-text">Chiamaci o scrivici su WhatsApp per prenotare il tuo appuntamento. Ti aspettiamo nel nostro salone nel cuore di Matera!</p>
+    <div class="c-item"><div class="c-icon">📞</div><div class="c-info"><strong>Telefono / WhatsApp</strong><a href="tel:+393333691411">+39 333 369 1411</a></div></div>
+    <div class="c-item"><div class="c-icon">📍</div><div class="c-info"><strong>Indirizzo</strong><span>Vico I Emanuele Duni 9, 75100 Matera (MT)</span></div></div>
+    <div class="c-item"><div class="c-icon">🌍</div><div class="c-info"><strong>Città</strong><span>Matera — Basilicata, Italia</span></div></div>
+  </div>
+  <div>
+    <div class="orari-box">
+      <div class="orari-title">Orari di Apertura ✦</div>
+      <div class="orario-row"><span class="orario-giorno">Lunedì</span><span class="orario-chiuso">Chiuso</span></div>
+      <div class="orario-row"><span class="orario-giorno">Martedì</span><span class="orario-ora">9:00 – 13:00 / 15:30 – 19:30</span></div>
+      <div class="orario-row"><span class="orario-giorno">Mercoledì</span><span class="orario-ora">9:00 – 13:00 / 15:30 – 19:30</span></div>
+      <div class="orario-row"><span class="orario-giorno">Giovedì</span><span class="orario-ora">9:00 – 13:00 / 15:30 – 19:30</span></div>
+      <div class="orario-row"><span class="orario-giorno">Venerdì</span><span class="orario-ora">9:00 – 13:00 / 15:30 – 19:30</span></div>
+      <div class="orario-row"><span class="orario-giorno">Sabato</span><span class="orario-ora">9:00 – 18:00</span></div>
+      <div class="orario-row" style="border:none"><span class="orario-giorno">Domenica</span><span class="orario-chiuso">Chiuso</span></div>
+    </div>
+    <div class="wa-box">
+      <div class="wa-title">Scrivici su WhatsApp! 💬</div>
+      <div class="wa-sub">Prenota il tuo appuntamento comodamente su WhatsApp — rispondiamo subito!</div>
+      <a href="https://wa.me/393333691411" target="_blank" class="wa-btn">💬 WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-logo">Aktiva <span>— Antonio Pepe</span></div>
+    <div class="footer-sub">Parrucchiere · Matera · Basilicata · Italia</div>
+  </div>
+  <div class="footer-info">
+    Vico I Emanuele Duni 9 · 75100 Matera (MT)<br>
+    <a href="tel:+393333691411" style="color:var(--stone2);text-decoration:none">+39 333 369 1411</a>
+  </div>
+</footer>
+</body>
+</html>
